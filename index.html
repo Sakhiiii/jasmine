@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Text Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="nav.js"></script>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-content" id="slider-content">
+            <div class="slide">FREE SHIPPING ON THE ORDER ABOVE PKR 75,000/- IN CANADA, UK & UAE</div>
+            <div class="slide">NEXT SLIDE TEXT HERE</div>
+            <div class="slide">ANOTHER SLIDE TEXT HERE</div>
+            <div class="slide">FREE SHIPPING ON THE ORDER ABOVE PKR 75,000/- IN CANADA, UK & UAE8</div>
+            <div class="slide">NEXT SLIDE TEXT HERE9</div>
+            <div class="slide">ANOTHER SLIDE TEXT HERE99</div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-left">
+            <div class="navbar-icon" id="menu-icon" onclick="openNav()"><i class="fas fa-bars"></i></div>
+        </div>
+        <div class="navbar-center">
+            <h1 style="font-size: 44px;">Ocia</h1>
+        </div>
+        <div class="navbar-right">
+            <div class="navbar-item">PKR <i class="fas fa-chevron-down"></i></div>
+            <div class="navbar-item"><i class="fas fa-user"></i></div>
+            <div class="navbar-item"><i class="fas fa-search"></i></div>
+            <div class="navbar-item"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+    </nav>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="text-decoration: none;">&times;</a>
+        <ul class="menu-items" style="margin-top: 50px;">
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Unstitched Summer</a></li>
+            <li><a href="#">Ready to Wear</a></li>
+            <li><a href="#">Formals</a></li>
+            <li><a href="#">Iris Eid Lawn</a></li>
+            <li><a href="#">Shahkar Luxury Lawn</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+<div class="hero">
+</div>
+<!-- 2nd section -->
+ <section class="second-section">
+    <h1>Best Seller Articles</h1>
+    <p>Most Demanding Articles of this year, will definitely suits on you and embrace your grace.</p>
+    <div class="articles-container">
+        <div class="article">
+            <div class="image-container">
+                <img src="images/article1.webp" alt="Frosty Pinkie">
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <p>SN-Frosty Pinkie</p>
+        </div>
+        <div class="article">
+            <div class="image-container">
+                <img src="images/article1.webp" alt="Black Rose">
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <p>SN-Black Rose</p>
+        </div>
+        <div class="article">
+            <div class="image-container">
+                <img src="images/article3.webp" alt="Sunflower">
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <p>SN-Sunflower</p>
+        </div>
+    </div>
+ </section>
+ <div class="container">
+    <h1>TOP VISITED CATEGORIES</h1>
+    <p>Street art salvia irony wolf waistcoat actually lo-fi meh fap jean shorts.</p>
+    <div class="categories">
+        <div class="category">
+            <img src="images/article3.webp" alt="Unstitched">
+            <span>UNSTITCHED</span>
+            <div class="quantity">100 Products</div>
+        </div>
+        <div class="category">
+            <img src="images/article1.webp" alt="Trending Now">
+            <span>TRENDING NOW</span>
+            <div class="quantity">75 Products</div>
+        </div>
+        <div class="category">
+            <img src="images/article3.webp" alt="New Arrivals">
+            <span>NEW ARRIVALS</span>
+            <div class="quantity">150 Products</div>
+        </div>
+        <div class="category">
+            <img src="images/article1.webp" alt="Luxury Pret">
+            <span>LUXURY PRET</span>
+            <div class="quantity">50 Products</div>
+        </div>
+        <div class="category">
+            <img src="images/article3.webp" alt="Ready to Wear">
+            <span>READY TO WEAR</span>
+            <div class="quantity">120 Products</div>
+        </div>
+    </div>
+</div>
+<div class="social-icons">
+    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="subscribe-section">
+    <h2>KEEP ME UPDATED</h2>
+    <h2>SUBSCRIBE US!</h2>
+    <p>Get Latest News & Exclusive Offers</p>
+    <form action="#" method="post">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="submit" value="SUBSCRIBE NOW">
+    </form>
+</div>
+<!-- video section -->
+<div class="video">
+    <div class="video1">
+        <video src="images/video.mp4" autoplay loop muted></video>
+    </div>
+    <div class="video1">
+        <video src="images/video.mp4" autoplay loop muted></video>
+    </div>
+    <div class="video1">
+        <video src="images/video.mp4" autoplay loop muted></video>
+    </div>
+</div>
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>HELP</h3>
+            <a href="#">Call us</a>
+            <a href="#">Email Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>SERVICES</h3>
+            <a href="#">Stitching Service</a>
+            <a href="#">International Shipping</a>
+            <a href="#">Pakistan Shipping</a>
+            <a href="#">Gift Packaging</a>
+        </div>
+        <div class="footer-section">
+            <h3>POLICIES</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Refund & Exchange Policy</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Terms of Service</a>
+            <div class="payment-icons">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard">
+                <img src="https://img.icons8.com/color/48/000000/cash.png" alt="Cash">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 - JAZMIN
+    </div>
+</footer>
+    <script src="script.js"></script>
+    <script>
+window.addEventListener('scroll', () => {
+    const sidebar = document.getElementById("navbar");
+    console.log('Scroll event detected'); // Debugging: Log scroll event detection
+    if (window.scrollY > 0) {
+        console.log('Applying styles for scrolled state'); // Debugging: Log state change
+        sidebar.style.backgroundColor = "#fff"; // Change to desired color when scrolled
+        sidebar.style.color = "#333"; // Change text color
+        sidebar.style.top = "0%";
+        sidebar.style.position = "fixed"; // Fix the position syntax
+        sidebar.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)"; // Add a shadow
+    } else {
+        console.log('Reverting styles for top state'); // Debugging: Log state change
+        sidebar.style.backgroundColor = ""; // Revert to original background color
+        sidebar.style.top = "";
+        sidebar.style.color = ""; // Revert to original text color
+        sidebar.style.boxShadow = ""; // Remove the shadow
+    }
+});
+    </script>
+</body>
+</html>

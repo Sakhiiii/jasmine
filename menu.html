@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #000, #222);
+            color: #fff;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            z-index: 99;
+            font-size: 2em;
+            text-align: center;
+            overflow-y: auto; /* Ensure sidebar is scrollable if content overflows */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            position: relative;
+        }
+
+        .sidebar ul li {
+            padding: 20px 0;
+            border-bottom: 1px solid #444;
+            position: relative;
+            transition: transform 0.5s ease, margin-bottom 0.5s ease; /* Smooth transitions */
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .sidebar ul li a:hover {
+            color: yellow;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background-color: #111;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ddd;
+        }
+
+        .navbar-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            background-color: #fff;
+            z-index: 100;
+        }
+
+        .navbar-icon {
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: opacity 0.3s ease;
+        }
+
+        .navbar-icon.hidden {
+            opacity: 0;
+        }
+
+        .closebtn {
+            font-size: 3em;
+            color: #000;
+            text-decoration: none;
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .closebtn.show {
+            display: block;
+        }
+
+        .text-boxes {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: calc(100% - 50px); /* Adjust to leave space for sidebar content */
+            padding: 20px;
+            box-sizing: border-box;
+            background: linear-gradient(to right, #000, #222);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .text-boxes.show {
+            transform: translateX(0);
+            opacity: 1;
+            display: block;
+        }
+
+        .text-boxes a {
+            padding: 10px;
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            background-color: #444;
+            margin: 5px;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .text-boxes a:hover {
+            background-color: #666;
+        }
+
+        .sale-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-left">
+        <div class="navbar-icon" id="menu-icon"><i class="fas fa-bars"></i></div>
+        <div class="closebtn" id="close-icon">&times;</div>
+    </div>
+    <div id="sidebar" class="sidebar">
+        <ul class="menu-items" style="margin-top: 80px;">
+            <li><a href="#" id="sale-link">Sale</a></li>
+            <li><a href="#" id="unstitched-link">Unstitched Summer</a></li>
+            <li><a href="#" id="ready-link">Ready to Wear</a></li>
+            <li><a href="#" id="formals-link">Formals</a></li>
+            <li><a href="#" id="iris-link">Iris Eid Lawn</a></li>
+            <li><a href="#" id="shahkar-link">Shahkar Luxury Lawn</a></li>
+        </ul>
+        <div class="text-boxes hidden" id="sale-boxes">
+            <a href="#">Sale Link 1</a>
+            <a href="#">Sale Link 2</a>
+            <a href="#">Sale Link 3</a>
+            <a href="#">Sale Link 4</a>
+        </div>
+        <div class="text-boxes hidden" id="unstitched-boxes">
+            <a href="#">Unstitched Link 1</a>
+            <a href="#">Unstitched Link 2</a>
+            <a href="#">Unstitched Link 3</a>
+            <a href="#">Unstitched Link 4</a>
+        </div>
+        <div class="text-boxes hidden" id="ready-boxes">
+            <a href="#">Ready Link 1</a>
+            <a href="#">Ready Link 2</a>
+            <a href="#">Ready Link 3</a>
+            <a href="#">Ready Link 4</a>
+        </div>
+        <div class="text-boxes hidden" id="formals-boxes">
+            <a href="#">Formals Link 1</a>
+            <a href="#">Formals Link 2</a>
+            <a href="#">Formals Link 3</a>
+            <a href="#">Formals Link 4</a>
+        </div>
+        <div class="text-boxes hidden" id="iris-boxes">
+            <a href="#">Iris Link 1</a>
+            <a href="#">Iris Link 2</a>
+            <a href="#">Iris Link 3</a>
+            <a href="#">Iris Link 4</a>
+        </div>
+        <div class="text-boxes hidden" id="shahkar-boxes">
+            <a href="#">Shahkar Link 1</a>
+            <a href="#">Shahkar Link 2</a>
+            <a href="#">Shahkar Link 3</a>
+            <a href="#">Shahkar Link 4</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+    <script>
+        // Function to open sidebar
+        function openNav() {
+            const sidebar = document.getElementById("sidebar");
+            const menuIcon = document.getElementById("menu-icon");
+            const closeIcon = document.getElementById("close-icon");
+            
+            sidebar.style.left = "0";
+            menuIcon.classList.add("hidden");
+            closeIcon.classList.add("show");
+        }
+
+        // Function to close sidebar
+        function closeNav() {
+            const sidebar = document.getElementById("sidebar");
+            const menuIcon = document.getElementById("menu-icon");
+            const closeIcon = document.getElementById("close-icon");
+
+            sidebar.style.left = "-100%";
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.remove("show");
+
+            // Hide all text boxes
+            document.querySelectorAll('.text-boxes').forEach(box => {
+                box.classList.remove("show");
+                setTimeout(() => box.classList.add("hidden"), 500); // Wait for the animation to complete
+            });
+
+            // Show all sidebar links and reset their position
+            document.querySelectorAll('.menu-items li').forEach(li => {
+                li.style.transform = 'translateY(0)';
+                li.style.marginBottom = '0'; // Reset margin
+            });
+        }
+
+        // Function to show text boxes
+        function showTextBoxes(linkId, boxesId) {
+            const link = document.getElementById(linkId);
+            const textBoxes = document.getElementById(boxesId);
+            const linkPosition = link.getBoundingClientRect();
+            const sidebar = document.getElementById("sidebar");
+            const sidebarTop = sidebar.getBoundingClientRect().top;
+
+            // Hide the clicked link
+            link.classList.add("sale-hidden");
+
+            // Hide all other text boxes
+            document.querySelectorAll('.text-boxes').forEach(box => {
+                if (box.id !== boxesId) {
+                    box.classList.remove("show");
+                    setTimeout(() => box.classList.add("hidden"), 500); // Wait for the animation to complete
+                }
+            });
+
+            // Adjust the text boxes to be visible
+            textBoxes.style.top = `${linkPosition.top - sidebarTop + linkPosition.height}px`;
+            textBoxes.style.left = '0';
+
+            // Show the text boxes
+            textBoxes.classList.remove("hidden");
+            setTimeout(() => textBoxes.classList.add("show"), 0); // Trigger the show animation
+
+            // Push down other sidebar links
+            const remainingLinks = Array.from(document.querySelectorAll('.menu-items li'));
+            remainingLinks.forEach(el => {
+                if (el.querySelector('a').id !== linkId) {
+                    el.style.transform = `translateY(${textBoxes.clientHeight}px)`;
+                    el.style.marginBottom = `${textBoxes.clientHeight}px`; // Add margin to ensure space is left
+                }
+            });
+        }
+
+        // Event listener to open sidebar when clicking menu icon
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.getElementById('menu-icon');
+            const closeBtn = document.getElementById('close-icon');
+            const links = [
+                { linkId: 'sale-link', boxesId: 'sale-boxes' },
+                { linkId: 'unstitched-link', boxesId: 'unstitched-boxes' },
+                { linkId: 'ready-link', boxesId: 'ready-boxes' },
+                { linkId: 'formals-link', boxesId: 'formals-boxes' },
+                { linkId: 'iris-link', boxesId: 'iris-boxes' },
+                { linkId: 'shahkar-link', boxesId: 'shahkar-boxes' }
+            ];
+
+            menuIcon.addEventListener('click', openNav);
+            closeBtn.addEventListener('click', closeNav);
+
+            links.forEach(({ linkId, boxesId }) => {
+                document.getElementById(linkId).addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showTextBoxes(linkId, boxesId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

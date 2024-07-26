@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Cursor Effect</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            cursor: none; /* Hide the default cursor */
+            background: radial-gradient(circle, #f8f8f8, #e0e0e0); /* Light gradient background */
+        }
+
+        #cursor {
+            position: absolute;
+            width: 20px; /* Normal size */
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.8); /* Bright red color */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), /* Intense shadow */
+                        0 0 30px rgba(255, 0, 0, 0.6), /* Strong outer glow */
+                        0 0 45px rgba(255, 0, 0, 0.4); /* Enhanced outer glow */
+            pointer-events: none; /* Prevent the cursor from blocking interactions */
+            transition: width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for size and shadow change */
+            transform: translate(-50%, -50%); /* Center the cursor */
+        }
+
+        #cursor.moving {
+            width: 40px; /* Increased size when moving */
+            height: 40px;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 1), /* Larger shadow */
+                        0 0 50px rgba(255, 0, 0, 0.8), /* More pronounced outer glow */
+                        0 0 75px rgba(255, 0, 0, 0.6); /* Stronger outer glow */
+            animation: pulse 1s infinite; /* Pulsing animation */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <script>
+        let timer;
+
+        document.addEventListener('mousemove', (event) => {
+            const cursor = document.getElementById('cursor');
+            cursor.style.left = `${event.pageX}px`;
+            cursor.style.top = `${event.pageY}px`;
+
+            cursor.classList.add('moving');
+
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                cursor.classList.remove('moving');
+            }, 150); // Adjust this value to control how long it takes to return to normal size
+        });
+    </script>
+</body>
+</html>
